@@ -39,4 +39,10 @@ def test_repl_invalid_command(monkeypatch):
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
 
     from app.calculator_repl import run
-    run() 
+    run()
+     
+def test_repl_whitespace_input(monkeypatch):
+    inputs = iter(["   help   ", "exit"])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    from app.calculator_repl import run
+    run()
