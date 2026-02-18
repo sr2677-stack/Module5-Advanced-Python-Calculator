@@ -33,3 +33,10 @@ def test_repl_help_command(monkeypatch):
 
     from app.calculator_repl import run
     run()
+
+def test_repl_invalid_command(monkeypatch):
+    inputs = iter(["abc", "exit"])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+
+    from app.calculator_repl import run
+    run() 
