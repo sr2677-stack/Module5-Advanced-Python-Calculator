@@ -21,5 +21,3 @@ python -m app.calculator_repl
 
 ## Run Tests
 pytest --cov=app --cov-report=term-missing
-
-##
